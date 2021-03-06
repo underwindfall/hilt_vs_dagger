@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.qifan.dagger.di.DaggerActivityComponent
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -12,8 +11,7 @@ class MainActivity : AppCompatActivity() {
     internal lateinit var mainPresenter: MainPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        DaggerActivityComponent.builder()
-            .build()
+        (application as DaggerApp).appComponent
             .inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
