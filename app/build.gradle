@@ -2,13 +2,14 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id "scabbard.gradle"
 }
 
 android {
     compileSdkVersion 30
 
     defaultConfig {
-        applicationId "com.qifan.hiltdagger"
+        applicationId "com.qifan.dagger"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
@@ -32,6 +33,10 @@ android {
     }
 }
 
+scabbard {
+    enabled true
+}
+
 dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -41,9 +46,9 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'com.google.dagger:dagger:2.33'
     kapt 'com.google.dagger:dagger-compiler:2.33'
-    implementation 'com.google.dagger:dagger-android:2.33'
-    implementation 'com.google.dagger:dagger-android-support:2.33' // if you use the support libraries
-    kapt 'com.google.dagger:dagger-android-processor:2.33'
+//    implementation 'com.google.dagger:dagger-android:2.33'
+//    implementation 'com.google.dagger:dagger-android-support:2.33' // if you use the support libraries
+//    kapt 'com.google.dagger:dagger-android-processor:2.33'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

@@ -1,4 +1,4 @@
-package com.qifan.hiltdagger
+package com.qifan.dagger
 
 import org.junit.Test
 
