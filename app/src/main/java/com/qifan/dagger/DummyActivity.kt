@@ -1,10 +1,9 @@
 package com.qifan.dagger
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import com.qifan.dagger.di.DaggerActivityComponent
+import androidx.appcompat.app.AppCompatActivity
 import javax.inject.Inject
 
 class DummyActivity : AppCompatActivity() {
@@ -14,8 +13,7 @@ class DummyActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        DaggerActivityComponent.builder()
-            .build()
+        (application as DaggerApp).appComponent
             .inject(this)
 
         super.onCreate(savedInstanceState)
