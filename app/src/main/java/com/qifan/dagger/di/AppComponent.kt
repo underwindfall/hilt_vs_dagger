@@ -6,7 +6,7 @@ import com.qifan.dagger.MainActivity
 import dagger.Component
 import javax.inject.Singleton
 
-//@Singleton
+@Singleton
 @Component(modules = [AppModule::class, ActivityModule::class])
 interface AppComponent {
     fun inject(app: DaggerApp)
