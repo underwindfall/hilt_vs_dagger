@@ -9,6 +9,7 @@ import dagger.Provides
 @Module
 class ActivityModule {
     @Provides
+    @PerActivity
     fun providePresenter(): MainPresenter {
         Log.d("MainPresenterImpl", "==== Dagger Provide injection ====")
         return MainPresenterImpl()
